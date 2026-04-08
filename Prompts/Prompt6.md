@@ -1,0 +1,2 @@
+Prompt 6:
+Let's start by making a Low-stock alert simulation and I want to be notified and get alerts when the stock of the items start to get low. Add anything that you deem necessary to the LowStockAlertsView.tsx file and as detailed as possible for best results.
