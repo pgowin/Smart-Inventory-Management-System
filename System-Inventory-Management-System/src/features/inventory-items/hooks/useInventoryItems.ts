@@ -3,6 +3,14 @@ import { localCacheKeys } from '../../../shared/utils/localCache'
 import { inventoryItemsService } from '../services/inventoryItemsService'
 import type { InventoryItem, InventoryItemInput } from '../types'
 
+export type InventoryItemsStore = {
+  items: InventoryItem[]
+  addItem: (input: InventoryItemInput) => void
+  editItem: (id: string, input: InventoryItemInput) => void
+  deleteItem: (id: string) => void
+  adjustItemQuantity: (id: string, delta: number) => void
+}
+
 function loadItemsFromCache(): InventoryItem[] | null {
   const raw = localStorage.getItem(localCacheKeys.inventoryItems)
   if (!raw) {
@@ -17,7 +25,7 @@ function loadItemsFromCache(): InventoryItem[] | null {
   }
 }
 
-export function useInventoryItems() {
+export function useInventoryItems(): InventoryItemsStore {
   const [items, setItems] = useState<InventoryItem[]>(() => {
     const cachedItems = loadItemsFromCache()
     if (cachedItems) {
@@ -48,10 +56,27 @@ export function useInventoryItems() {
     setItems((current) => current.filter((item) => item.id !== id))
   }
 
+  const adjustItemQuantity = (id: string, delta: number) => {
+    setItems((current) =>
+      current.map((item) => {
+        if (item.id !== id) {
+          return item
+        }
+
+        return {
+          ...item,
+          quantity: Math.max(0, item.quantity + delta),
+          updatedAt: new Date().toISOString(),
+        }
+      }),
+    )
+  }
+
   return {
     items,
     addItem,
     editItem,
     deleteItem,
+    adjustItemQuantity,
   }
 }

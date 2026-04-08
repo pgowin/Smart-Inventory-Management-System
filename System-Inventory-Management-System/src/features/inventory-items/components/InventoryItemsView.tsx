@@ -1,4 +1,4 @@
-import { useInventoryItems } from '../hooks/useInventoryItems'
+import type { InventoryItemsStore } from '../hooks/useInventoryItems'
 import type { InventoryItem, InventoryItemInput } from '../types'
 
 function promptText(label: string, currentValue = '') {
@@ -67,8 +67,12 @@ function promptItemFields(seed?: InventoryItem): InventoryItemInput | null {
   }
 }
 
-export function InventoryItemsView() {
-  const { items, addItem, editItem, deleteItem } = useInventoryItems()
+type InventoryItemsViewProps = {
+  inventoryStore: InventoryItemsStore
+}
+
+export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) {
+  const { items, addItem, editItem, deleteItem } = inventoryStore
 
   const handleAddItem = () => {
     const newItemInput = promptItemFields()
