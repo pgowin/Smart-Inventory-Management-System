@@ -11,7 +11,63 @@
   margin-top: 0;
 }
 
-.app-shell ul {
-  margin: 1rem 0 0;
-  padding-left: 1.2rem;
+.inventory-items {
+  margin-top: 2rem;
+}
+
+.inventory-items__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inventory-items__header h2 {
+  margin: 0;
+}
+
+.inventory-items__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.inventory-item-card {
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 1rem;
+  background: #f9fbfd;
+}
+
+.inventory-item-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.inventory-item-card p {
+  margin: 0.2rem 0;
+}
+
+.inventory-item-card__actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  border: 1px solid #c5ced8;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f1f4f7;
+}
+
+button.danger {
+  border-color: #f2b8b5;
+  color: #8e1f19;
 }

@@ -1,17 +1,12 @@
 import './App.css'
+import { InventoryItemsView } from './features/inventory-items/components/InventoryItemsView'
 
 function App() {
   return (
     <main className="app-shell">
       <h1>Smart Inventory Management System</h1>
-      <p>Project architecture scaffold is ready for implementation.</p>
-      <ul>
-        <li>Inventory items</li>
-        <li>Stock levels</li>
-        <li>Low-stock alerts</li>
-        <li>Sales analytics</li>
-        <li>Multi-location inventory</li>
-      </ul>
+      <p>Manage your inventory with simple add, edit, and delete actions.</p>
+      <InventoryItemsView />
     </main>
   )
 }

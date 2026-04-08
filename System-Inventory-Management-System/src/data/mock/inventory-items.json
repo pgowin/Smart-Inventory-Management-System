@@ -20,5 +20,38 @@
     "reorderPoint": 20,
     "unitPrice": 1.69,
     "updatedAt": "2026-04-07T09:20:00Z"
+  },
+  {
+    "id": "item-1003",
+    "sku": "SKU-BRD-003",
+    "name": "Whole Wheat Bread",
+    "category": "Bakery",
+    "locationId": "loc-001",
+    "quantity": 28,
+    "reorderPoint": 10,
+    "unitPrice": 2.49,
+    "updatedAt": "2026-04-07T09:22:00Z"
+  },
+  {
+    "id": "item-1004",
+    "sku": "SKU-EGG-004",
+    "name": "Eggs 12-pack",
+    "category": "Dairy",
+    "locationId": "loc-002",
+    "quantity": 35,
+    "reorderPoint": 15,
+    "unitPrice": 3.29,
+    "updatedAt": "2026-04-07T09:25:00Z"
+  },
+  {
+    "id": "item-1005",
+    "sku": "SKU-RCE-005",
+    "name": "Jasmine Rice 2kg",
+    "category": "Pantry",
+    "locationId": "loc-001",
+    "quantity": 19,
+    "reorderPoint": 8,
+    "unitPrice": 6.49,
+    "updatedAt": "2026-04-07T09:28:00Z"
   }
 ]

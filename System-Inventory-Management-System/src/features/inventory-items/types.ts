@@ -10,3 +10,13 @@ export type InventoryItem = {
   unitPrice: number
   updatedAt: string
 }
+
+export type InventoryItemInput = {
+  sku: string
+  name: string
+  category: string
+  locationId: string
+  quantity: number
+  reorderPoint: number
+  unitPrice: number
+}
