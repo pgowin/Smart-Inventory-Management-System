@@ -1,4 +1,5 @@
 import type { InventoryItemsStore } from '../../inventory-items/hooks/useInventoryItems'
+import { alertsService } from '../../alerts/services/alertsService'
 
 type StockLevelsViewProps = {
   inventoryStore: InventoryItemsStore
@@ -20,6 +21,13 @@ export function StockLevelsView({ inventoryStore }: StockLevelsViewProps) {
             <div>
               <h3>{item.name}</h3>
               <p>{item.sku}</p>
+              {alertsService.isLowStock(item.quantity, item.reorderPoint) && (
+                <p
+                  className={`stock-alert-text ${alertsService.getLowStockSeverity(item.quantity, item.reorderPoint)}`}
+                >
+                  Low stock alert
+                </p>
+              )}
             </div>
 
             <div className="stock-level-card__controls">

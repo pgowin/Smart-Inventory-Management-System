@@ -1,5 +1,6 @@
 import type { InventoryItemsStore } from '../hooks/useInventoryItems'
 import type { InventoryItem, InventoryItemInput } from '../types'
+import { alertsService } from '../../alerts/services/alertsService'
 
 function promptText(label: string, currentValue = '') {
   const value = window.prompt(label, currentValue)
@@ -117,7 +118,16 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
             <p>SKU: {item.sku}</p>
             <p>Category: {item.category}</p>
             <p>Location: {item.locationId}</p>
-            <p>Quantity: {item.quantity}</p>
+            <div className="inventory-item-card__quantity-row">
+              <p>Quantity: {item.quantity}</p>
+              {alertsService.isLowStock(item.quantity, item.reorderPoint) && (
+                <span
+                  className={`stock-alert-badge ${alertsService.getLowStockSeverity(item.quantity, item.reorderPoint)}`}
+                >
+                  Low Stock
+                </span>
+              )}
+            </div>
             <p>Reorder Point: {item.reorderPoint}</p>
             <p>Unit Price: ${item.unitPrice.toFixed(2)}</p>
 

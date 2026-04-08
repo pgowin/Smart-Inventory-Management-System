@@ -7,6 +7,62 @@
   background: #ffffff;
 }
 
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: min(360px, calc(100vw - 2rem));
+  z-index: 1000;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.toast {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid #f0cb8a;
+  border-left: 5px solid #d99000;
+  border-radius: 10px;
+  background: #fff8e8;
+  padding: 0.65rem 0.7rem;
+  box-shadow: 0 6px 18px rgba(24, 39, 75, 0.16);
+}
+
+.toast.critical {
+  border-color: #f2b8b5;
+  border-left-color: #b42318;
+  background: #fff1f0;
+}
+
+.toast h4 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.toast p {
+  margin: 0.25rem 0 0;
+  color: #5d3a00;
+  font-size: 0.83rem;
+}
+
+.toast.critical p {
+  color: #7a271a;
+}
+
+.toast-close {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.05rem 0.35rem;
+  height: fit-content;
+  line-height: 1;
+  color: #6a5d2e;
+}
+
+.toast.critical .toast-close {
+  color: #7a271a;
+}
+
 .app-shell h1 {
   margin-top: 0;
 }
@@ -57,6 +113,37 @@
 
 .inventory-item-card p {
   margin: 0.2rem 0;
+}
+
+.inventory-item-card__quantity-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.inventory-item-card__quantity-row p {
+  margin: 0.2rem 0;
+}
+
+.stock-alert-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid transparent;
+}
+
+.stock-alert-badge.warning {
+  color: #9a5800;
+  background: #fff2d8;
+  border-color: #f0cb8a;
+}
+
+.stock-alert-badge.critical {
+  color: #8e1f19;
+  background: #ffe2df;
+  border-color: #f2b8b5;
 }
 
 .inventory-item-card__actions {
@@ -127,6 +214,20 @@ button.danger {
   margin: 0.25rem 0 0;
   color: #5f6e80;
   font-size: 0.9rem;
+}
+
+.stock-alert-text {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.stock-alert-text.warning {
+  color: #9a5800;
+}
+
+.stock-alert-text.critical {
+  color: #b42318;
 }
 
 .stock-level-card__controls {
