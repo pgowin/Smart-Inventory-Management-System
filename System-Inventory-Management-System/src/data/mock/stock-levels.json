@@ -1,0 +1,18 @@
+[
+  {
+    "itemId": "item-1001",
+    "locationId": "loc-001",
+    "available": 42,
+    "reserved": 3,
+    "incoming": 20,
+    "status": "healthy"
+  },
+  {
+    "itemId": "item-1002",
+    "locationId": "loc-002",
+    "available": 14,
+    "reserved": 2,
+    "incoming": 0,
+    "status": "low"
+  }
+]

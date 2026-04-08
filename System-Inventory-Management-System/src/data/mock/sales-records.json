@@ -1,0 +1,18 @@
+[
+  {
+    "id": "sale-9001",
+    "itemId": "item-1001",
+    "locationId": "loc-001",
+    "unitsSold": 15,
+    "revenue": 11.85,
+    "soldAt": "2026-04-06T13:00:00Z"
+  },
+  {
+    "id": "sale-9002",
+    "itemId": "item-1002",
+    "locationId": "loc-002",
+    "unitsSold": 9,
+    "revenue": 15.21,
+    "soldAt": "2026-04-06T15:40:00Z"
+  }
+]

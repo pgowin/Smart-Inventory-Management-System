@@ -1,0 +1,14 @@
+[
+  {
+    "id": "loc-001",
+    "name": "Downtown Store",
+    "city": "Seattle",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "id": "loc-002",
+    "name": "Northside Store",
+    "city": "Seattle",
+    "timezone": "America/Los_Angeles"
+  }
+]
