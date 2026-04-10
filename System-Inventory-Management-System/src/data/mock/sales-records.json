@@ -3,16 +3,280 @@
     "id": "sale-9001",
     "itemId": "item-1001",
     "locationId": "loc-001",
-    "unitsSold": 15,
-    "revenue": 11.85,
-    "soldAt": "2026-04-06T13:00:00Z"
+    "unitsSold": 18,
+    "revenue": 14.22,
+    "soldAt": "2026-04-01T16:05:00Z"
   },
   {
     "id": "sale-9002",
     "itemId": "item-1002",
     "locationId": "loc-002",
+    "unitsSold": 11,
+    "revenue": 18.59,
+    "soldAt": "2026-04-01T17:40:00Z"
+  },
+  {
+    "id": "sale-9003",
+    "itemId": "item-1003",
+    "locationId": "loc-001",
+    "unitsSold": 8,
+    "revenue": 19.92,
+    "soldAt": "2026-04-01T19:20:00Z"
+  },
+  {
+    "id": "sale-9004",
+    "itemId": "item-1004",
+    "locationId": "loc-002",
+    "unitsSold": 7,
+    "revenue": 23.03,
+    "soldAt": "2026-04-02T13:10:00Z"
+  },
+  {
+    "id": "sale-9005",
+    "itemId": "item-1005",
+    "locationId": "loc-001",
+    "unitsSold": 6,
+    "revenue": 38.94,
+    "soldAt": "2026-04-02T14:30:00Z"
+  },
+  {
+    "id": "sale-9006",
+    "itemId": "item-1001",
+    "locationId": "loc-002",
+    "unitsSold": 20,
+    "revenue": 15.8,
+    "soldAt": "2026-04-02T18:05:00Z"
+  },
+  {
+    "id": "sale-9007",
+    "itemId": "item-1002",
+    "locationId": "loc-001",
+    "unitsSold": 10,
+    "revenue": 16.9,
+    "soldAt": "2026-04-03T12:45:00Z"
+  },
+  {
+    "id": "sale-9008",
+    "itemId": "item-1003",
+    "locationId": "loc-002",
     "unitsSold": 9,
-    "revenue": 15.21,
-    "soldAt": "2026-04-06T15:40:00Z"
+    "revenue": 22.41,
+    "soldAt": "2026-04-03T15:12:00Z"
+  },
+  {
+    "id": "sale-9009",
+    "itemId": "item-1004",
+    "locationId": "loc-001",
+    "unitsSold": 12,
+    "revenue": 39.48,
+    "soldAt": "2026-04-03T19:25:00Z"
+  },
+  {
+    "id": "sale-9010",
+    "itemId": "item-1005",
+    "locationId": "loc-002",
+    "unitsSold": 5,
+    "revenue": 32.45,
+    "soldAt": "2026-04-04T10:18:00Z"
+  },
+  {
+    "id": "sale-9011",
+    "itemId": "item-1001",
+    "locationId": "loc-001",
+    "unitsSold": 22,
+    "revenue": 17.38,
+    "soldAt": "2026-04-04T11:42:00Z"
+  },
+  {
+    "id": "sale-9012",
+    "itemId": "item-1002",
+    "locationId": "loc-002",
+    "unitsSold": 13,
+    "revenue": 21.97,
+    "soldAt": "2026-04-04T17:35:00Z"
+  },
+  {
+    "id": "sale-9013",
+    "itemId": "item-1003",
+    "locationId": "loc-001",
+    "unitsSold": 11,
+    "revenue": 27.39,
+    "soldAt": "2026-04-05T09:40:00Z"
+  },
+  {
+    "id": "sale-9014",
+    "itemId": "item-1004",
+    "locationId": "loc-002",
+    "unitsSold": 10,
+    "revenue": 32.9,
+    "soldAt": "2026-04-05T13:22:00Z"
+  },
+  {
+    "id": "sale-9015",
+    "itemId": "item-1005",
+    "locationId": "loc-001",
+    "unitsSold": 9,
+    "revenue": 58.41,
+    "soldAt": "2026-04-05T18:55:00Z"
+  },
+  {
+    "id": "sale-9016",
+    "itemId": "item-1001",
+    "locationId": "loc-002",
+    "unitsSold": 16,
+    "revenue": 12.64,
+    "soldAt": "2026-04-06T10:05:00Z"
+  },
+  {
+    "id": "sale-9017",
+    "itemId": "item-1002",
+    "locationId": "loc-001",
+    "unitsSold": 14,
+    "revenue": 23.66,
+    "soldAt": "2026-04-06T13:48:00Z"
+  },
+  {
+    "id": "sale-9018",
+    "itemId": "item-1003",
+    "locationId": "loc-002",
+    "unitsSold": 7,
+    "revenue": 17.43,
+    "soldAt": "2026-04-06T16:09:00Z"
+  },
+  {
+    "id": "sale-9019",
+    "itemId": "item-1004",
+    "locationId": "loc-001",
+    "unitsSold": 8,
+    "revenue": 26.32,
+    "soldAt": "2026-04-07T09:22:00Z"
+  },
+  {
+    "id": "sale-9020",
+    "itemId": "item-1005",
+    "locationId": "loc-002",
+    "unitsSold": 12,
+    "revenue": 77.88,
+    "soldAt": "2026-04-07T11:15:00Z"
+  },
+  {
+    "id": "sale-9021",
+    "itemId": "item-1001",
+    "locationId": "loc-001",
+    "unitsSold": 19,
+    "revenue": 15.01,
+    "soldAt": "2026-04-07T14:36:00Z"
+  },
+  {
+    "id": "sale-9022",
+    "itemId": "item-1002",
+    "locationId": "loc-002",
+    "unitsSold": 15,
+    "revenue": 25.35,
+    "soldAt": "2026-04-07T18:10:00Z"
+  },
+  {
+    "id": "sale-9023",
+    "itemId": "item-1003",
+    "locationId": "loc-001",
+    "unitsSold": 10,
+    "revenue": 24.9,
+    "soldAt": "2026-04-08T08:55:00Z"
+  },
+  {
+    "id": "sale-9024",
+    "itemId": "item-1004",
+    "locationId": "loc-002",
+    "unitsSold": 9,
+    "revenue": 29.61,
+    "soldAt": "2026-04-08T10:47:00Z"
+  },
+  {
+    "id": "sale-9025",
+    "itemId": "item-1005",
+    "locationId": "loc-001",
+    "unitsSold": 7,
+    "revenue": 45.43,
+    "soldAt": "2026-04-08T12:19:00Z"
+  },
+  {
+    "id": "sale-9026",
+    "itemId": "item-1001",
+    "locationId": "loc-002",
+    "unitsSold": 17,
+    "revenue": 13.43,
+    "soldAt": "2026-04-08T15:30:00Z"
+  },
+  {
+    "id": "sale-9027",
+    "itemId": "item-1002",
+    "locationId": "loc-001",
+    "unitsSold": 12,
+    "revenue": 20.28,
+    "soldAt": "2026-04-08T18:03:00Z"
+  },
+  {
+    "id": "sale-9028",
+    "itemId": "item-1003",
+    "locationId": "loc-002",
+    "unitsSold": 13,
+    "revenue": 32.37,
+    "soldAt": "2026-04-09T09:11:00Z"
+  },
+  {
+    "id": "sale-9029",
+    "itemId": "item-1004",
+    "locationId": "loc-001",
+    "unitsSold": 11,
+    "revenue": 36.19,
+    "soldAt": "2026-04-09T11:52:00Z"
+  },
+  {
+    "id": "sale-9030",
+    "itemId": "item-1005",
+    "locationId": "loc-002",
+    "unitsSold": 8,
+    "revenue": 51.92,
+    "soldAt": "2026-04-09T14:26:00Z"
+  },
+  {
+    "id": "sale-9031",
+    "itemId": "item-1001",
+    "locationId": "loc-001",
+    "unitsSold": 21,
+    "revenue": 16.59,
+    "soldAt": "2026-04-09T16:48:00Z"
+  },
+  {
+    "id": "sale-9032",
+    "itemId": "item-1002",
+    "locationId": "loc-002",
+    "unitsSold": 16,
+    "revenue": 27.04,
+    "soldAt": "2026-04-09T19:17:00Z"
+  },
+  {
+    "id": "sale-9033",
+    "itemId": "item-1003",
+    "locationId": "loc-001",
+    "unitsSold": 14,
+    "revenue": 34.86,
+    "soldAt": "2026-04-10T08:38:00Z"
+  },
+  {
+    "id": "sale-9034",
+    "itemId": "item-1004",
+    "locationId": "loc-002",
+    "unitsSold": 10,
+    "revenue": 32.9,
+    "soldAt": "2026-04-10T12:02:00Z"
+  },
+  {
+    "id": "sale-9035",
+    "itemId": "item-1005",
+    "locationId": "loc-001",
+    "unitsSold": 9,
+    "revenue": 58.41,
+    "soldAt": "2026-04-10T15:27:00Z"
   }
 ]
