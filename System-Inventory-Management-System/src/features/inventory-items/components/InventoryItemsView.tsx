@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { InventoryItemsStore } from '../hooks/useInventoryItems'
 import type { InventoryItem, InventoryItemInput } from '../types'
 import { alertsService } from '../../alerts/services/alertsService'
@@ -73,7 +74,8 @@ type InventoryItemsViewProps = {
 }
 
 export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) {
-  const { items, addItem, editItem, deleteItem } = inventoryStore
+  const { items, addItem, editItem, deleteItem, adjustItemQuantity } = inventoryStore
+  const [quantityDrafts, setQuantityDrafts] = useState<Record<string, string>>({})
 
   const handleAddItem = () => {
     const newItemInput = promptItemFields()
@@ -100,6 +102,47 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
     }
 
     deleteItem(id)
+  }
+
+  const handleSetQuantity = (item: InventoryItem, nextQuantity: number) => {
+    if (Number.isNaN(nextQuantity)) {
+      return
+    }
+
+    const normalizedQuantity = Math.max(0, Math.floor(nextQuantity))
+    editItem(item.id, {
+      sku: item.sku,
+      name: item.name,
+      category: item.category,
+      locationId: item.locationId,
+      quantity: normalizedQuantity,
+      reorderPoint: item.reorderPoint,
+      unitPrice: item.unitPrice,
+    })
+  }
+
+  const handleQuantityChange = (itemId: string, value: string) => {
+    if (!/^\d*$/.test(value)) {
+      return
+    }
+
+    setQuantityDrafts((current) => ({
+      ...current,
+      [itemId]: value,
+    }))
+  }
+
+  const commitQuantityDraft = (item: InventoryItem) => {
+    const rawDraft = quantityDrafts[item.id]
+    const nextQuantity = rawDraft === '' || rawDraft === undefined ? 0 : Number(rawDraft)
+
+    handleSetQuantity(item, nextQuantity)
+
+    setQuantityDrafts((current) => {
+      const next = { ...current }
+      delete next[item.id]
+      return next
+    })
   }
 
   return (
@@ -138,7 +181,38 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
               <p>SKU: {item.sku}</p>
               <p>Category: {item.category}</p>
               <p>Location: {item.locationId}</p>
-              <p>Quantity: {item.quantity}</p>
+              <div className="inventory-item-quantity-editor">
+                <span>Quantity</span>
+                <div className="inventory-item-quantity-editor__controls">
+                  <button
+                    type="button"
+                    aria-label={`Decrease stock for ${item.name}`}
+                    onClick={() => adjustItemQuantity(item.id, -1)}
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    min={0}
+                    value={quantityDrafts[item.id] ?? String(item.quantity)}
+                    onChange={(event) => handleQuantityChange(item.id, event.target.value)}
+                    onBlur={() => commitQuantityDraft(item)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter') {
+                        event.currentTarget.blur()
+                      }
+                    }}
+                    aria-label={`Quantity for ${item.name}`}
+                  />
+                  <button
+                    type="button"
+                    aria-label={`Increase stock for ${item.name}`}
+                    onClick={() => adjustItemQuantity(item.id, 1)}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
               <p>Reorder Point: {item.reorderPoint}</p>
               <p>Unit Price: ${item.unitPrice.toFixed(2)}</p>
 

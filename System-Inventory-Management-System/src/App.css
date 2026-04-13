@@ -157,6 +157,41 @@
   font-size: 0.84rem;
 }
 
+.inventory-item-quantity-editor {
+  margin: 0.24rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.inventory-item-quantity-editor span {
+  color: #465a6f;
+  font-size: 0.84rem;
+}
+
+.inventory-item-quantity-editor__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.inventory-item-quantity-editor__controls button {
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 0;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.inventory-item-quantity-editor__controls input {
+  width: 5.5rem;
+  border: 1px solid #c5ced8;
+  border-radius: 8px;
+  padding: 0.35rem 0.45rem;
+  font-size: 0.84rem;
+}
+
 .stock-alert-badge {
   font-size: 0.72rem;
   font-weight: 700;

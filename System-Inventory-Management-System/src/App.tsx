@@ -1,7 +1,6 @@
 import './App.css'
 import { useInventoryItems } from './features/inventory-items/hooks/useInventoryItems'
 import { InventoryItemsView } from './features/inventory-items/components/InventoryItemsView'
-import { StockLevelsView } from './features/stock-levels/components/StockLevelsView'
 import { useLowStockAlerts } from './features/alerts/hooks/useLowStockAlerts'
 import { SalesAnalyticsView } from './features/sales-analytics/components/SalesAnalyticsView'
 import { MultiLocationInventoryView } from './features/multi-location/components/MultiLocationInventoryView'
@@ -44,11 +43,10 @@ function App() {
 
       <main className="app-shell">
         <h1>Smart Inventory Management System</h1>
-        <p>Manage inventory and adjust live stock counts in separate panels.</p>
+        <p>Manage inventory and adjust stock counts directly from each item.</p>
 
         <div className="panels-grid">
           <InventoryItemsView inventoryStore={inventoryStore} />
-          <StockLevelsView inventoryStore={inventoryStore} />
           <MultiLocationInventoryView inventoryStore={inventoryStore} />
           <SalesAnalyticsView />
         </div>
