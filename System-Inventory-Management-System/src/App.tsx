@@ -4,6 +4,7 @@ import { InventoryItemsView } from './features/inventory-items/components/Invent
 import { StockLevelsView } from './features/stock-levels/components/StockLevelsView'
 import { useLowStockAlerts } from './features/alerts/hooks/useLowStockAlerts'
 import { SalesAnalyticsView } from './features/sales-analytics/components/SalesAnalyticsView'
+import { MultiLocationInventoryView } from './features/multi-location/components/MultiLocationInventoryView'
 
 function App() {
   const inventoryStore = useInventoryItems()
@@ -48,6 +49,7 @@ function App() {
         <div className="panels-grid">
           <InventoryItemsView inventoryStore={inventoryStore} />
           <StockLevelsView inventoryStore={inventoryStore} />
+          <MultiLocationInventoryView inventoryStore={inventoryStore} />
           <SalesAnalyticsView />
         </div>
       </main>
