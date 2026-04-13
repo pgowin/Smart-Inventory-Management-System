@@ -53,5 +53,115 @@
     "reorderPoint": 8,
     "unitPrice": 6.49,
     "updatedAt": "2026-04-07T09:28:00Z"
+  },
+  {
+    "id": "item-1006",
+    "sku": "SKU-BAN-006",
+    "name": "Banana Bunch",
+    "category": "Produce",
+    "locationId": "loc-002",
+    "quantity": 51,
+    "reorderPoint": 20,
+    "unitPrice": 1.29,
+    "updatedAt": "2026-04-07T09:31:00Z"
+  },
+  {
+    "id": "item-1007",
+    "sku": "SKU-ORG-007",
+    "name": "Orange Juice 1L",
+    "category": "Beverages",
+    "locationId": "loc-001",
+    "quantity": 24,
+    "reorderPoint": 12,
+    "unitPrice": 3.49,
+    "updatedAt": "2026-04-07T09:34:00Z"
+  },
+  {
+    "id": "item-1008",
+    "sku": "SKU-CKN-008",
+    "name": "Chicken Breast 500g",
+    "category": "Meat",
+    "locationId": "loc-002",
+    "quantity": 12,
+    "reorderPoint": 14,
+    "unitPrice": 5.99,
+    "updatedAt": "2026-04-07T09:37:00Z"
+  },
+  {
+    "id": "item-1009",
+    "sku": "SKU-PAS-009",
+    "name": "Penne Pasta 500g",
+    "category": "Pantry",
+    "locationId": "loc-001",
+    "quantity": 33,
+    "reorderPoint": 10,
+    "unitPrice": 1.89,
+    "updatedAt": "2026-04-07T09:40:00Z"
+  },
+  {
+    "id": "item-1010",
+    "sku": "SKU-TMT-010",
+    "name": "Canned Tomatoes",
+    "category": "Pantry",
+    "locationId": "loc-002",
+    "quantity": 46,
+    "reorderPoint": 16,
+    "unitPrice": 1.59,
+    "updatedAt": "2026-04-07T09:43:00Z"
+  },
+  {
+    "id": "item-1011",
+    "sku": "SKU-CHS-011",
+    "name": "Cheddar Cheese 250g",
+    "category": "Dairy",
+    "locationId": "loc-001",
+    "quantity": 18,
+    "reorderPoint": 9,
+    "unitPrice": 4.29,
+    "updatedAt": "2026-04-07T09:46:00Z"
+  },
+  {
+    "id": "item-1012",
+    "sku": "SKU-YGT-012",
+    "name": "Greek Yogurt 500g",
+    "category": "Dairy",
+    "locationId": "loc-002",
+    "quantity": 9,
+    "reorderPoint": 10,
+    "unitPrice": 3.79,
+    "updatedAt": "2026-04-07T09:49:00Z"
+  },
+  {
+    "id": "item-1013",
+    "sku": "SKU-COF-013",
+    "name": "Ground Coffee 340g",
+    "category": "Beverages",
+    "locationId": "loc-001",
+    "quantity": 21,
+    "reorderPoint": 8,
+    "unitPrice": 7.99,
+    "updatedAt": "2026-04-07T09:52:00Z"
+  },
+  {
+    "id": "item-1014",
+    "sku": "SKU-SPN-014",
+    "name": "Baby Spinach 200g",
+    "category": "Produce",
+    "locationId": "loc-002",
+    "quantity": 16,
+    "reorderPoint": 7,
+    "unitPrice": 2.69,
+    "updatedAt": "2026-04-07T09:55:00Z"
+  },
+  {
+    "id": "item-1015",
+    "sku": "SKU-SLM-015",
+    "name": "Atlantic Salmon 400g",
+    "category": "Seafood",
+    "locationId": "loc-001",
+    "quantity": 7,
+    "reorderPoint": 8,
+    "unitPrice": 9.99,
+    "updatedAt": "2026-04-07T09:58:00Z"
   }
 ]

@@ -113,37 +113,49 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
 
       <div className="inventory-items__list">
         {items.map((item) => (
-          <article className="inventory-item-card" key={item.id}>
-            <h3>{item.name}</h3>
-            <p>SKU: {item.sku}</p>
-            <p>Category: {item.category}</p>
-            <p>Location: {item.locationId}</p>
-            <div className="inventory-item-card__quantity-row">
-              <p>Quantity: {item.quantity}</p>
-              {alertsService.isLowStock(item.quantity, item.reorderPoint) && (
-                <span
-                  className={`stock-alert-badge ${alertsService.getLowStockSeverity(item.quantity, item.reorderPoint)}`}
-                >
-                  Low Stock
-                </span>
-              )}
-            </div>
-            <p>Reorder Point: {item.reorderPoint}</p>
-            <p>Unit Price: ${item.unitPrice.toFixed(2)}</p>
+          <details className="inventory-item-dropdown" key={item.id}>
+            <summary className="inventory-item-dropdown__summary">
+              <div>
+                <h3>{item.name}</h3>
+                <p>
+                  {item.sku} • {item.category}
+                </p>
+              </div>
 
-            <div className="inventory-item-card__actions">
-              <button type="button" onClick={() => handleEditItem(item)}>
-                Edit
-              </button>
-              <button
-                type="button"
-                className="danger"
-                onClick={() => handleDeleteItem(item.id, item.name)}
-              >
-                Delete
-              </button>
+              <div className="inventory-item-dropdown__summary-meta">
+                <span>Qty: {item.quantity}</span>
+                {alertsService.isLowStock(item.quantity, item.reorderPoint) && (
+                  <span
+                    className={`stock-alert-badge ${alertsService.getLowStockSeverity(item.quantity, item.reorderPoint)}`}
+                  >
+                    Low Stock
+                  </span>
+                )}
+              </div>
+            </summary>
+
+            <div className="inventory-item-dropdown__details">
+              <p>SKU: {item.sku}</p>
+              <p>Category: {item.category}</p>
+              <p>Location: {item.locationId}</p>
+              <p>Quantity: {item.quantity}</p>
+              <p>Reorder Point: {item.reorderPoint}</p>
+              <p>Unit Price: ${item.unitPrice.toFixed(2)}</p>
+
+              <div className="inventory-item-card__actions">
+                <button type="button" onClick={() => handleEditItem(item)}>
+                  Edit
+                </button>
+                <button
+                  type="button"
+                  className="danger"
+                  onClick={() => handleDeleteItem(item.id, item.name)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
-          </article>
+          </details>
         ))}
       </div>
     </section>

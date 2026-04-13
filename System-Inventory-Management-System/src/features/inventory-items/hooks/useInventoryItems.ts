@@ -25,15 +25,22 @@ function loadItemsFromCache(): InventoryItem[] | null {
   }
 }
 
-export function useInventoryItems(): InventoryItemsStore {
-  const [items, setItems] = useState<InventoryItem[]>(() => {
-    const cachedItems = loadItemsFromCache()
-    if (cachedItems) {
-      return cachedItems
-    }
+function hydrateItems(cachedItems: InventoryItem[] | null): InventoryItem[] {
+  const seedItems = inventoryItemsService.getInitialItems()
+  if (!cachedItems) {
+    return seedItems
+  }
 
-    return inventoryItemsService.getInitialItems()
-  })
+  const cachedById = new Set(cachedItems.map((item) => item.id))
+  const missingSeedItems = seedItems.filter((item) => !cachedById.has(item.id))
+
+  return [...cachedItems, ...missingSeedItems]
+}
+
+export function useInventoryItems(): InventoryItemsStore {
+  const [items, setItems] = useState<InventoryItem[]>(() =>
+    hydrateItems(loadItemsFromCache()),
+  )
 
   useEffect(() => {
     localStorage.setItem(localCacheKeys.inventoryItems, JSON.stringify(items))
