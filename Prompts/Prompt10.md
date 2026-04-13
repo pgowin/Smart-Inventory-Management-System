@@ -1,0 +1,2 @@
+Prompt 10:
+Can we get rid of the real time stocks panel since the data there is redundant. On the inventory items panel add a + or - buttons to adjust the quanitity of the items and add a textspace number so we can change it manually.
