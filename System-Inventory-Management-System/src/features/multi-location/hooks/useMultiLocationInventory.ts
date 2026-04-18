@@ -1,8 +1,8 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import type { InventoryItemInput } from '../../inventory-items/types'
 import type { InventoryItemsStore } from '../../inventory-items/hooks/useInventoryItems'
 import { multiLocationService } from '../services/multiLocationService'
-import type { TransferStockInput } from '../types'
+import type { StoreLocation, TransferStockInput } from '../types'
 
 function toInventoryItemInput(
   sourceItem: InventoryItemsStore['items'][number],
@@ -20,22 +20,36 @@ function toInventoryItemInput(
   }
 }
 
-export function useMultiLocationInventory(inventoryStore: InventoryItemsStore) {
-  const [selectedLocationId, setSelectedLocationId] = useState<string>('all')
-
+export function useMultiLocationInventory(
+  inventoryStore: InventoryItemsStore,
+  selectedLocationId: string,
+  locations: StoreLocation[],
+) {
   const { items, addItem, editItem, adjustItemQuantity } = inventoryStore
-
-  const locations = useMemo(() => multiLocationService.getLocations(), [])
-
-  const metrics = useMemo(
-    () => multiLocationService.getMultiviewMetrics(items),
-    [items],
-  )
 
   const locationSummaries = useMemo(
     () => multiLocationService.getLocationSummaries(items),
     [items],
   )
+
+  const currentLocationSummary = useMemo(() => {
+    const selectedLocation = locations.find(
+      (location) => location.id === selectedLocationId,
+    )
+
+    return (
+      locationSummaries.find((row) => row.locationId === selectedLocationId) ?? {
+        locationId: selectedLocationId,
+        locationName: selectedLocation?.name ?? selectedLocationId,
+        city: selectedLocation?.city ?? 'Unknown',
+        timezone: selectedLocation?.timezone ?? 'Unknown',
+        itemCount: 0,
+        totalUnits: 0,
+        totalInventoryValue: 0,
+        lowStockItems: 0,
+      }
+    )
+  }, [locationSummaries, locations, selectedLocationId])
 
   const inventoryRows = useMemo(
     () => multiLocationService.getLocationInventoryRows(items),
@@ -43,16 +57,16 @@ export function useMultiLocationInventory(inventoryStore: InventoryItemsStore) {
   )
 
   const filteredRows = useMemo(
-    () =>
-      selectedLocationId === 'all'
-        ? inventoryRows
-        : inventoryRows.filter((row) => row.locationId === selectedLocationId),
+    () => inventoryRows.filter((row) => row.locationId === selectedLocationId),
     [inventoryRows, selectedLocationId],
   )
 
   const transferableItems = useMemo(
-    () => items.filter((item) => item.quantity > 0),
-    [items],
+    () =>
+      items.filter(
+        (item) => item.quantity > 0 && item.locationId === selectedLocationId,
+      ),
+    [items, selectedLocationId],
   )
 
   const transferStock = (input: TransferStockInput): string => {
@@ -98,10 +112,8 @@ export function useMultiLocationInventory(inventoryStore: InventoryItemsStore) {
 
   return {
     locations,
-    metrics,
     locationSummaries,
-    selectedLocationId,
-    setSelectedLocationId,
+    currentLocationSummary,
     filteredRows,
     transferableItems,
     adjustItemQuantity,

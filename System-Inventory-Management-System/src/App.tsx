@@ -1,12 +1,23 @@
+import { useMemo, useState } from 'react'
 import './App.css'
 import { useInventoryItems } from './features/inventory-items/hooks/useInventoryItems'
 import { InventoryItemsView } from './features/inventory-items/components/InventoryItemsView'
 import { useLowStockAlerts } from './features/alerts/hooks/useLowStockAlerts'
 import { SalesAnalyticsView } from './features/sales-analytics/components/SalesAnalyticsView'
 import { MultiLocationInventoryView } from './features/multi-location/components/MultiLocationInventoryView'
+import { multiLocationService } from './features/multi-location/services/multiLocationService'
 
 function App() {
   const inventoryStore = useInventoryItems()
+  const locations = useMemo(() => multiLocationService.getLocations(), [])
+  const [selectedLocationId, setSelectedLocationId] = useState<string>(
+    locations[0]?.id ?? '',
+  )
+  const selectedLocation = useMemo(
+    () => locations.find((location) => location.id === selectedLocationId) ?? null,
+    [locations, selectedLocationId],
+  )
+
   const { notifications, dismissNotification } = useLowStockAlerts(
     inventoryStore.items,
   )
@@ -46,9 +57,21 @@ function App() {
         <p>Manage inventory and adjust stock counts directly from each item.</p>
 
         <div className="panels-grid">
-          <InventoryItemsView inventoryStore={inventoryStore} />
-          <MultiLocationInventoryView inventoryStore={inventoryStore} />
-          <SalesAnalyticsView />
+          <InventoryItemsView
+            inventoryStore={inventoryStore}
+            locationId={selectedLocationId}
+            locationName={selectedLocation?.name ?? selectedLocationId}
+          />
+          <MultiLocationInventoryView
+            inventoryStore={inventoryStore}
+            locations={locations}
+            selectedLocationId={selectedLocationId}
+            onLocationChange={setSelectedLocationId}
+          />
+          <SalesAnalyticsView
+            locationId={selectedLocationId}
+            locationName={selectedLocation?.name ?? selectedLocationId}
+          />
         </div>
       </main>
     </>

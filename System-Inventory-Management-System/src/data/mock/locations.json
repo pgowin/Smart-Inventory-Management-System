@@ -10,5 +10,23 @@
     "name": "Northside Store",
     "city": "Seattle",
     "timezone": "America/Los_Angeles"
+  },
+  {
+    "id": "loc-003",
+    "name": "Capitol Hill Store",
+    "city": "Seattle",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "id": "loc-004",
+    "name": "Bellevue Store",
+    "city": "Bellevue",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "id": "loc-005",
+    "name": "Tacoma Store",
+    "city": "Tacoma",
+    "timezone": "America/Los_Angeles"
   }
 ]

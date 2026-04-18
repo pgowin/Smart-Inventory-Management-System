@@ -163,5 +163,104 @@
     "reorderPoint": 8,
     "unitPrice": 9.99,
     "updatedAt": "2026-04-07T09:58:00Z"
+  },
+  {
+    "id": "item-1016",
+    "sku": "SKU-STR-016",
+    "name": "Strawberries 454g",
+    "category": "Produce",
+    "locationId": "loc-003",
+    "quantity": 22,
+    "reorderPoint": 10,
+    "unitPrice": 4.49,
+    "updatedAt": "2026-04-07T10:01:00Z"
+  },
+  {
+    "id": "item-1017",
+    "sku": "SKU-HNY-017",
+    "name": "Honey Oat Cereal",
+    "category": "Pantry",
+    "locationId": "loc-003",
+    "quantity": 31,
+    "reorderPoint": 12,
+    "unitPrice": 3.99,
+    "updatedAt": "2026-04-07T10:03:00Z"
+  },
+  {
+    "id": "item-1018",
+    "sku": "SKU-TKY-018",
+    "name": "Turkey Slices 250g",
+    "category": "Deli",
+    "locationId": "loc-003",
+    "quantity": 11,
+    "reorderPoint": 9,
+    "unitPrice": 5.49,
+    "updatedAt": "2026-04-07T10:05:00Z"
+  },
+  {
+    "id": "item-1019",
+    "sku": "SKU-AVC-019",
+    "name": "Avocado Oil 500ml",
+    "category": "Pantry",
+    "locationId": "loc-004",
+    "quantity": 17,
+    "reorderPoint": 8,
+    "unitPrice": 8.99,
+    "updatedAt": "2026-04-07T10:07:00Z"
+  },
+  {
+    "id": "item-1020",
+    "sku": "SKU-PTR-020",
+    "name": "Peanut Butter 510g",
+    "category": "Pantry",
+    "locationId": "loc-004",
+    "quantity": 26,
+    "reorderPoint": 10,
+    "unitPrice": 4.19,
+    "updatedAt": "2026-04-07T10:09:00Z"
+  },
+  {
+    "id": "item-1021",
+    "sku": "SKU-BLD-021",
+    "name": "Blueberries 170g",
+    "category": "Produce",
+    "locationId": "loc-004",
+    "quantity": 14,
+    "reorderPoint": 12,
+    "unitPrice": 3.79,
+    "updatedAt": "2026-04-07T10:11:00Z"
+  },
+  {
+    "id": "item-1022",
+    "sku": "SKU-CKR-022",
+    "name": "Whole Grain Crackers",
+    "category": "Snacks",
+    "locationId": "loc-005",
+    "quantity": 24,
+    "reorderPoint": 9,
+    "unitPrice": 2.99,
+    "updatedAt": "2026-04-07T10:13:00Z"
+  },
+  {
+    "id": "item-1023",
+    "sku": "SKU-ICE-023",
+    "name": "Vanilla Ice Cream 1L",
+    "category": "Frozen",
+    "locationId": "loc-005",
+    "quantity": 13,
+    "reorderPoint": 7,
+    "unitPrice": 5.79,
+    "updatedAt": "2026-04-07T10:15:00Z"
+  },
+  {
+    "id": "item-1024",
+    "sku": "SKU-WTR-024",
+    "name": "Sparkling Water 12-pack",
+    "category": "Beverages",
+    "locationId": "loc-005",
+    "quantity": 37,
+    "reorderPoint": 15,
+    "unitPrice": 6.29,
+    "updatedAt": "2026-04-07T10:17:00Z"
   }
 ]

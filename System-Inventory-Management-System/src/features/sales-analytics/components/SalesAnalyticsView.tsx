@@ -1,5 +1,10 @@
 import { useSalesAnalytics } from '../hooks/useSalesAnalytics'
 
+type SalesAnalyticsViewProps = {
+  locationId: string
+  locationName: string
+}
+
 function formatCurrency(value: number) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -24,7 +29,10 @@ function formatDateTime(dateString: string) {
   }).format(new Date(dateString))
 }
 
-export function SalesAnalyticsView() {
+export function SalesAnalyticsView({
+  locationId,
+  locationName,
+}: SalesAnalyticsViewProps) {
   const {
     summary,
     dailyRevenue,
@@ -32,13 +40,15 @@ export function SalesAnalyticsView() {
     topItems,
     locationPerformance,
     recentTransactions,
-  } = useSalesAnalytics()
+  } = useSalesAnalytics(locationId)
 
   return (
     <section className="sales-analytics-panel">
       <div className="sales-analytics-panel__header">
         <h2>Sales Analytics Report</h2>
-        <p>Snapshot of revenue performance, top-selling items, and location trends.</p>
+        <p>
+          Snapshot of revenue performance for {locationName}.
+        </p>
       </div>
 
       <div className="sales-summary-grid">
@@ -95,6 +105,7 @@ export function SalesAnalyticsView() {
                 <span>{formatCurrency(item.totalRevenue)}</span>
               </li>
             ))}
+            {topItems.length === 0 && <li>No sales data for this location yet.</li>}
           </ul>
         </section>
 
@@ -116,6 +127,11 @@ export function SalesAnalyticsView() {
                   <td>{location.unitsSold}</td>
                 </tr>
               ))}
+              {locationPerformance.length === 0 && (
+                <tr>
+                  <td colSpan={3}>No location performance data available.</td>
+                </tr>
+              )}
             </tbody>
           </table>
         </section>
@@ -138,11 +154,16 @@ export function SalesAnalyticsView() {
               <tr key={record.id}>
                 <td>{formatDateTime(record.soldAt)}</td>
                 <td>{record.itemId}</td>
-                <td>{record.locationId}</td>
+                <td>{locationName}</td>
                 <td>{record.unitsSold}</td>
                 <td>{formatCurrency(record.revenue)}</td>
               </tr>
             ))}
+            {recentTransactions.length === 0 && (
+              <tr>
+                <td colSpan={5}>No transactions recorded for this location.</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </section>

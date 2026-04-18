@@ -33,7 +33,10 @@ function promptNumber(label: string, currentValue: number) {
   return numeric
 }
 
-function promptItemFields(seed?: InventoryItem): InventoryItemInput | null {
+function promptItemFields(
+  seed?: InventoryItem,
+  defaultLocationId?: string,
+): InventoryItemInput | null {
   const sku = promptText('SKU', seed?.sku ?? '')
   if (!sku) return null
 
@@ -43,11 +46,7 @@ function promptItemFields(seed?: InventoryItem): InventoryItemInput | null {
   const category = promptText('Category', seed?.category ?? '')
   if (!category) return null
 
-  const locationId = promptText(
-    'Location ID (example: loc-001)',
-    seed?.locationId ?? 'loc-001',
-  )
-  if (!locationId) return null
+  const locationId = seed?.locationId ?? defaultLocationId ?? 'loc-001'
 
   const quantity = promptNumber('Quantity', seed?.quantity ?? 0)
   if (quantity === null) return null
@@ -71,14 +70,21 @@ function promptItemFields(seed?: InventoryItem): InventoryItemInput | null {
 
 type InventoryItemsViewProps = {
   inventoryStore: InventoryItemsStore
+  locationId: string
+  locationName: string
 }
 
-export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) {
+export function InventoryItemsView({
+  inventoryStore,
+  locationId,
+  locationName,
+}: InventoryItemsViewProps) {
   const { items, addItem, editItem, deleteItem, adjustItemQuantity } = inventoryStore
   const [quantityDrafts, setQuantityDrafts] = useState<Record<string, string>>({})
+  const scopedItems = items.filter((item) => item.locationId === locationId)
 
   const handleAddItem = () => {
-    const newItemInput = promptItemFields()
+    const newItemInput = promptItemFields(undefined, locationId)
     if (!newItemInput) {
       return
     }
@@ -87,7 +93,7 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
   }
 
   const handleEditItem = (item: InventoryItem) => {
-    const editInput = promptItemFields(item)
+    const editInput = promptItemFields(item, locationId)
     if (!editInput) {
       return
     }
@@ -148,14 +154,17 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
   return (
     <section className="inventory-items">
       <div className="inventory-items__header">
-        <h2>Inventory Items</h2>
+        <div>
+          <h2>Inventory Items</h2>
+          <p>{locationName} location page</p>
+        </div>
         <button type="button" onClick={handleAddItem}>
           Add Item
         </button>
       </div>
 
       <div className="inventory-items__list">
-        {items.map((item) => (
+        {scopedItems.map((item) => (
           <details className="inventory-item-dropdown" key={item.id}>
             <summary className="inventory-item-dropdown__summary">
               <div>
@@ -231,6 +240,9 @@ export function InventoryItemsView({ inventoryStore }: InventoryItemsViewProps) 
             </div>
           </details>
         ))}
+        {scopedItems.length === 0 && (
+          <p>No inventory items found for this location.</p>
+        )}
       </div>
     </section>
   )

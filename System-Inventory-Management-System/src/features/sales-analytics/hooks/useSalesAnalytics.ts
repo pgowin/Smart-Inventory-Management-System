@@ -1,8 +1,14 @@
 import { useMemo } from 'react'
 import { salesAnalyticsService } from '../services/salesAnalyticsService'
 
-export function useSalesAnalytics() {
-  const records = useMemo(() => salesAnalyticsService.getSalesRecords(), [])
+export function useSalesAnalytics(locationId: string) {
+  const records = useMemo(
+    () =>
+      salesAnalyticsService
+        .getSalesRecords()
+        .filter((record) => record.locationId === locationId),
+    [locationId],
+  )
 
   const summary = useMemo(
     () => salesAnalyticsService.getSummary(records),

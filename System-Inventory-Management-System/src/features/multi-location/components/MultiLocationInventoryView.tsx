@@ -1,9 +1,13 @@
 import { useMemo, useState } from 'react'
 import type { InventoryItemsStore } from '../../inventory-items/hooks/useInventoryItems'
 import { useMultiLocationInventory } from '../hooks/useMultiLocationInventory'
+import type { StoreLocation } from '../types'
 
 type MultiLocationInventoryViewProps = {
   inventoryStore: InventoryItemsStore
+  locations: StoreLocation[]
+  selectedLocationId: string
+  onLocationChange: (locationId: string) => void
 }
 
 function formatCurrency(value: number) {
@@ -16,18 +20,18 @@ function formatCurrency(value: number) {
 
 export function MultiLocationInventoryView({
   inventoryStore,
+  locations,
+  selectedLocationId,
+  onLocationChange,
 }: MultiLocationInventoryViewProps) {
   const {
-    locations,
-    metrics,
     locationSummaries,
-    selectedLocationId,
-    setSelectedLocationId,
+    currentLocationSummary,
     filteredRows,
     transferableItems,
     adjustItemQuantity,
     transferStock,
-  } = useMultiLocationInventory(inventoryStore)
+  } = useMultiLocationInventory(inventoryStore, selectedLocationId, locations)
 
   const [sourceItemId, setSourceItemId] = useState<string>('')
   const [targetLocationId, setTargetLocationId] = useState<string>('')
@@ -86,24 +90,37 @@ export function MultiLocationInventoryView({
         <p>
           Monitor and manage stock across locations from one operational view.
         </p>
+        <label className="multiview-filter">
+          <span>Location Page</span>
+          <select
+            value={selectedLocationId}
+            onChange={(event) => onLocationChange(event.target.value)}
+          >
+            {locations.map((location) => (
+              <option key={location.id} value={location.id}>
+                {location.name}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
 
       <div className="multiview-metrics-grid">
         <article className="multiview-metric-card">
-          <h3>Locations</h3>
-          <p>{metrics.locationCount}</p>
+          <h3>Location</h3>
+          <p>{currentLocationSummary.locationName}</p>
         </article>
         <article className="multiview-metric-card">
           <h3>Total Units</h3>
-          <p>{metrics.totalUnits}</p>
+          <p>{currentLocationSummary.totalUnits}</p>
         </article>
         <article className="multiview-metric-card">
           <h3>Inventory Value</h3>
-          <p>{formatCurrency(metrics.totalInventoryValue)}</p>
+          <p>{formatCurrency(currentLocationSummary.totalInventoryValue)}</p>
         </article>
         <article className="multiview-metric-card">
           <h3>Low Stock Items</h3>
-          <p>{metrics.lowStockItems}</p>
+          <p>{currentLocationSummary.lowStockItems}</p>
         </article>
       </div>
 
@@ -111,20 +128,9 @@ export function MultiLocationInventoryView({
         <section className="multiview-card">
           <div className="multiview-card__header">
             <h3>Location Visibility</h3>
-            <label className="multiview-filter">
-              <span>Filter</span>
-              <select
-                value={selectedLocationId}
-                onChange={(event) => setSelectedLocationId(event.target.value)}
-              >
-                <option value="all">All locations</option>
-                {locations.map((location) => (
-                  <option key={location.id} value={location.id}>
-                    {location.name}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <p>
+              {currentLocationSummary.city} - {currentLocationSummary.timezone}
+            </p>
           </div>
 
           <table className="multiview-table">
@@ -158,7 +164,7 @@ export function MultiLocationInventoryView({
 
         <section className="multiview-card">
           <div className="multiview-card__header">
-            <h3>Inventory by Location</h3>
+            <h3>Inventory for {currentLocationSummary.locationName}</h3>
             <p>{filteredRows.length} entries in view</p>
           </div>
 
