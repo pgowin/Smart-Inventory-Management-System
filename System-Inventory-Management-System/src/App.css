@@ -705,3 +705,182 @@ button.danger {
 .multiview-transfer-status--error {
   color: #b42318;
 }
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1.5rem clamp(1rem, 2.4vw, 2.2rem) 2rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.app-shell h1 {
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+  letter-spacing: -0.025em;
+  color: var(--text-strong);
+}
+
+.app-shell > p {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+.panels-grid {
+  margin-top: 1.35rem;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+}
+
+.inventory-items,
+.multiview-panel,
+.sales-analytics-panel {
+  grid-column: span 12;
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 22px 44px -36px rgba(21, 44, 79, 0.52),
+    0 14px 28px -28px rgba(15, 45, 82, 0.35);
+}
+
+.inventory-items__header h2,
+.multiview-panel__header h2,
+.sales-analytics-panel__header h2 {
+  color: var(--text-strong);
+  letter-spacing: -0.015em;
+}
+
+.inventory-items__header p,
+.multiview-panel__header p,
+.sales-analytics-panel__header p {
+  color: var(--text-muted);
+}
+
+button {
+  border-color: var(--border-strong);
+  background: linear-gradient(180deg, #ffffff, #f2f7ff);
+  color: #1b304d;
+  font-weight: 600;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #ffffff, #e8f2ff);
+  box-shadow: 0 9px 18px -14px rgba(31, 111, 235, 0.65);
+  transform: translateY(-1px);
+}
+
+.inventory-items__header button,
+.multiview-transfer-form button {
+  background: linear-gradient(180deg, #2f7ff2, #1f6feb);
+  color: #ffffff;
+  border-color: #1858bd;
+}
+
+.inventory-items__header button:hover,
+.multiview-transfer-form button:hover {
+  background: linear-gradient(180deg, #2b77e2, #1c61d1);
+}
+
+.inventory-item-dropdown,
+.stock-level-card,
+.sales-metric-card,
+.sales-chart-panel,
+.sales-report-card,
+.multiview-card,
+.multiview-item-card,
+.multiview-metric-card {
+  border-color: var(--border-soft);
+  background: var(--bg-card);
+  box-shadow: 0 12px 30px -28px rgba(16, 46, 84, 0.5);
+}
+
+.inventory-item-dropdown__summary p,
+.inventory-item-dropdown__details p,
+.stock-level-card p,
+.sales-chart__label,
+.sales-ranking-list p,
+.multiview-item-card p,
+.multiview-table td p,
+.multiview-card__header p {
+  color: var(--text-muted);
+}
+
+.sales-metric-card p,
+.multiview-metric-card p,
+.sales-ranking-list span {
+  color: #173a63;
+}
+
+.sales-chart__bar-track {
+  background: linear-gradient(to top, #deebfb, #f4f9ff);
+}
+
+.sales-chart__bar {
+  background: linear-gradient(180deg, #5eafff 0%, #2b7de8 100%);
+}
+
+.multiview-table th,
+.sales-table th {
+  color: #385272;
+}
+
+.multiview-filter select,
+.multiview-transfer-form select,
+.multiview-transfer-form input,
+.inventory-item-quantity-editor__controls input {
+  border-color: var(--border-strong);
+  background: #f9fcff;
+}
+
+.multiview-filter select:focus,
+.multiview-transfer-form select:focus,
+.multiview-transfer-form input:focus,
+.inventory-item-quantity-editor__controls input:focus {
+  outline: 2px solid var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.stock-alert-badge.warning {
+  background: var(--warning-soft);
+}
+
+.stock-alert-badge.critical {
+  background: var(--danger-soft);
+}
+
+.multiview-transfer-status {
+  color: #0b6b4e;
+}
+
+.multiview-transfer-status--error {
+  color: #a51f1a;
+}
+
+@media (min-width: 980px) {
+  .inventory-items,
+  .sales-analytics-panel {
+    grid-column: span 6;
+  }
+
+  .multiview-panel {
+    grid-column: span 12;
+  }
+}
+
+@media (min-width: 1400px) {
+  .inventory-items,
+  .sales-analytics-panel {
+    grid-column: span 4;
+  }
+
+  .multiview-panel {
+    grid-column: span 4;
+  }
+}
