@@ -1,5 +1,5 @@
 Prompt 10:
-Let's get rid of the real time stocks panel since the data there is redundant. We already have the item stock level warning on the items itself. On the inventory items panel, add a + or - buttons to adjust the quanitity of the items and add a textspace number so we can change it manually.
+Let's get rid of the real time stocks panel since the data there is redundant. We already have the item stock level warning on the items itself. On the inventory items panel, add a + or - buttons to adjust the quantity of the items and add a textspace number so we can change it manually.
 
 AI RESPONSE:
 I’ll remove the redundant real-time stock panel from the dashboard and then enhance the inventory items panel with inline quantity controls (+, -, and editable number input).
