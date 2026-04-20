@@ -1,0 +1,2 @@
+Prompt 14:
+Create a new test file for the multiview dashboard. This for chnaging the location, increasing and decreasing the quantity for an item in that store, and choosing an item in a destination and transferring it into another location.
