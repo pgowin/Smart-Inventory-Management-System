@@ -1,6 +1,7 @@
-Prompt 3: Let’s start with the file and folder architecture. Please organize and create folders and files for inventory items, stock levels, alerts, sales analytics, data, and multi-location views. Delete anything you deem unnecessary for our project and add anything you thing will be necessary. 
+## Prompt 3: 
+Let’s start with the file and folder architecture. Please organize and create folders and files for inventory items, stock levels, alerts, sales analytics, data, and multi-location views. Delete anything you deem unnecessary for our project and add anything you thing will be necessary. 
 
-AI Response:
+## AI Response:
 I’m going to scan the existing project structure first so I can safely scaffold the new architecture and only remove files that are truly unnecessary for this inventory system.
 
 Read [](file:///c%3A/GitHub/SmartInventoryManagementSystem/Smart-Inventory-Management-System/System-Inventory-Management-System)

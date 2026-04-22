@@ -1,7 +1,7 @@
-Prompt 14:
+## Prompt 14:
 Create a new test file for the multiview dashboard panel. The unit test will include changing the location, increasing and decreasing the quantity for an item in that store, and choosing an item, a destination, and the amount of units and transferring it into another location.
 
-AI RESPONSE:
+## AI RESPONSE:
 I’m going to inspect the multi-location feature code and existing test patterns first, then I’ll add a focused unit test file that covers location change, quantity updates, and stock transfer behavior.
 
 Searched for files matching test patterns

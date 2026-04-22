@@ -1,7 +1,8 @@
-Prompt 9:
+## Prompt 9:
 We should fix the UI features of the inventory items dashboard. Instead of having cards for each item, we should make a drop down for each item that allows you to click on the item and display all the information about that item. Create these changes in the APP.css file. Also, add 10 more items to the inventory in the inventory-items.json file. 
 
-AI Response:I’ll update the inventory items UI to a click-to-expand dropdown style and add 10 new inventory records, then run a build to confirm everything still compiles.
+## AI Response:
+I’ll update the inventory items UI to a click-to-expand dropdown style and add 10 new inventory records, then run a build to confirm everything still compiles.
 
 Reviewed 3 files
 I confirmed this needs a small component structure update plus CSS to get real click-to-expand dropdown behavior, so I’m applying both along with the 10 new inventory seed items.
@@ -26,9 +27,11 @@ Validation completed.
 Build passed successfully with no TypeScript or Vite errors after these changes.
 If you want, I can also make the dropdown behave like an accordion (only one item open at a time).
 
-PROMPT FIX:I want to implement those 10 new inventory items that we created into my app.
+## PROMPT FIX:
 
-AI FIX RESPONSE:
+I want to implement those 10 new inventory items that we created into my app.
+
+## AI FIX RESPONSE:
 I’ll make the new items appear automatically even for existing users with cached inventory by updating the inventory hydration logic, then I’ll verify with a build.
 
 Reviewed 3 files

@@ -1,7 +1,7 @@
-Prompt 7:
+## Prompt 7:
 We should start on the basic sales analytics feature using mock data. We should add more sales data to the sales-records.json file you created for our sales analysis to be efficient. This sales analytics feature should have its own panel like the rest of the other features we have implemented. It should follow a basic sales analytics report template. Let’s add a sales analysis chart as well.
 
-AI Response:
+## AI Response:
 I’ll inspect the existing sales analytics implementation and current mock schema first, then I’ll expand the mock sales dataset, build a report-style analytics panel, and add a chart in the same style as your other feature panels.
 
 Searched for sales-related files and reviewed 5 files

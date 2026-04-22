@@ -1,7 +1,7 @@
-Prompt 5:
+## Prompt 5:
 We need a real time stocks display. This display should show how many units we have of each item. There should be the ability to add or increase the stock units with a simple minus or plus button UI. This stock display should be its own panel. In the future, it will have alerts for low-stock so that is why we need to create it on a different panel(Do not apply the alert feature yet).
 
-AI Response:
+## AI Response:
 I’m implementing the new stock panel as a separate UI section and wiring it to the same inventory state so plus/minus updates stay in sync with your item list in real time.
 
 Reviewed 3 files

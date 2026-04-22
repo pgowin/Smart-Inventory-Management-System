@@ -1,7 +1,7 @@
-Prompt 13: 
+## Prompt 13: 
 Let's create a test folder, where we can test each feature for the inventory items panel, location dashboard panel, and sales analytics panel. In the inventory items panel test folder, can you create a unit test for adding a new item, increasing or decreasing the quantity of an item, editing an item, and then deleting an item.
 
-AI RESPONSE:
+## AI RESPONSE:
 I’ll inspect the current test setup and inventory feature APIs first, then I’ll add a new test folder structure for all requested panels and implement inventory unit tests for add, quantity changes, edit, and delete.
 
 I’m gathering the project and memory context in one pass so I can add tests in the right structure without breaking existing conventions.
@@ -63,10 +63,10 @@ Note
 Your “location dashboard panel” maps to the existing multi-location feature in this codebase, so I created that test folder under multi-location.
 If you want, I can now add starter unit tests for the location dashboard and sales analytics folders too.
 
-PROMPT FIX:
+## PROMPT FIX:
 this is using mocha syntax but i thought you installed for vitest, if its easier to leave the code and install mocha then do that other wise lets fix it.
 
-AI FIX RESPONSE:
+## AI FIX RESPONSE:
 You’re right to call that out, and I can fix it cleanly without adding Mocha. I’ll make the test explicitly import and use Vitest APIs so it’s unmistakably Vitest, then re-run the suite.
 
 Edited

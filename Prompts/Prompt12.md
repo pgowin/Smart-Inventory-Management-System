@@ -1,7 +1,7 @@
-Prompt 12:
+## Prompt 12:
 Let's work on the UI design and layout. There is a lot of blank space right now. Lets make everything wider so it occupies the full width of the visible browser window to get rid of those blank spaces. Let’s also add some modern colors and designs to make it more professional and appealing to the user.
 
-AI RESPONSE:
+## AI RESPONSE:
 I’ll restyle the layout to be full-bleed across the viewport and refresh the visual system (colors, surfaces, spacing, and cards) while keeping your current components intact. I’m checking the global styles first so the width and theme updates apply consistently.
 
 Reviewed 2 files

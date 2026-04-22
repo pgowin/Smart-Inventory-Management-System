@@ -1,7 +1,7 @@
-Prompt 11:
+## Prompt 11:
 The multiview dashboard should work like this. There should be different “Pages” for each location. At the top of each “page” it should display the location name, total units, inventory value and low stock items like how the dashboard displays it right now. It should have the ability to switch locations at the top as well. The inventory items in the inventory items panel should only be the items available for the current location. Keep the cross location transfer. The Sales analytics report should only be for the current location “page.”
 
-AI RESPONSE:
+## AI RESPONSE:
 I’m going to inspect how the current dashboard wires location data across panels, then I’ll implement a single “current location page” state so metrics, inventory items, and sales analytics all filter to that location while keeping cross-location transfer intact.
 
 Searched for files matching `**/*.{js,jsx,ts,tsx}` and reviewed 3 files
@@ -69,10 +69,10 @@ npm run build
 TypeScript compile and Vite build completed with no errors.
 If you want, I can do one follow-up pass to hide the Location Performance table in sales when a single location page is selected (it is currently still shown, but location-filtered).
 
-PROMPT FIX:
+## PROMPT FIX:
 Lets add 3 more locations with data.
 
-AI FIX RESPONSE:
+## AI FIX RESPONSE:
 Optimizing tool selection...
 
 I’ll add three new locations and seed them with matching inventory and sales records so the dashboard, transfers, and analytics all have real data for those locations. I’m checking the current mock datasets now to extend them consistently.

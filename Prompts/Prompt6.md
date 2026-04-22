@@ -1,8 +1,8 @@
-Prompt 6:
+## Prompt 6:
 Let's start on the Low-stock alert feature. I want to be notified and get alerts when the stock of the items starts to get low. It should display a warning on both the inventory items panel and stock display panel. For the inventory items panel, the warning should be to the right of the quantity row. For the stock display panel, the warning should be under the item SKU code.
 
 
-AI Response:
+## AI Response:
 I’m implementing low-stock warnings now by adding shared alert logic and rendering warning labels in both panels at the exact positions you requested.
 
 Reviewed 5 files
@@ -34,10 +34,10 @@ Validation
 Build passes successfully with npm run build.
 If you want, next I can make the alert wording more explicit (for example: Low stock: 5 left, reorder at 10) while keeping the same placements.
 
-Prompt Fix: 
+## Prompt Fix: 
 Lets add a little minor fix to this prompt. I want to add a warning notification for the low stock alerts at the top right of the page each time a stock enters into low level.
 
-AI FIX RESPONSE:
+## AI FIX RESPONSE:
 I’ll add a lightweight top-right notification system that triggers only when an item transitions into low stock, then wire it into the existing low-stock logic so alerts appear at the moment levels drop.
 
 Reviewed 4 files

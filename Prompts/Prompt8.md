@@ -1,7 +1,7 @@
-Prompt 8:
+## Prompt 8:
 Can you add a feature called Multiview. We need to be able to monitor and manage inventory across multiple locations in one dashboard. This feature will help with streamline tracking, improve visibility, and support better decision-making.
 
-AI RESPONSE:
+## AI RESPONSE:
 I’m implementing a new Multiview dashboard feature end-to-end in the existing React/Vite app, and first I’ll inspect the current multi-location flow so I can add this without breaking existing patterns.
 
 Reviewed 6 files

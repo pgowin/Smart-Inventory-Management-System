@@ -1,4 +1,5 @@
-Prompt 2: Do not write any code yet. I am giving you context on what this application is going to be. You are building a cloud-based inventory management system for small retail stores. The
+## Prompt 2: 
+Do not write any code yet. I am giving you context on what this application is going to be. You are building a cloud-based inventory management system for small retail stores. The
 system must track stock levels, predict shortages, and sync across multiple devices. These are are the functional requirements:
 • Add and edit inventory items
 • Real-time stock level display
@@ -12,7 +13,7 @@ o In-memory state
 o Local caching
 o Mock API functions
 
-AI Response:
+## AI Response:
 Understood. I will not write code yet.
 
 I have your scope and requirements captured for this app:

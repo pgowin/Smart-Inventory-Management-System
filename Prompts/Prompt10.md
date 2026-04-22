@@ -1,7 +1,7 @@
-Prompt 10:
+## Prompt 10:
 Let's get rid of the real time stocks panel since the data there is redundant. We already have the item stock level warning on the items itself. On the inventory items panel, add a + or - buttons to adjust the quantity of the items and add a textspace number so we can change it manually.
 
-AI RESPONSE:
+## AI RESPONSE:
 I’ll remove the redundant real-time stock panel from the dashboard and then enhance the inventory items panel with inline quantity controls (+, -, and editable number input).
 
 Reviewed 3 files
@@ -29,10 +29,10 @@ Validation:
 Build passed successfully with no compile errors.
 If you want, I can also make the manual number input update only on blur/Enter (instead of every keystroke) for smoother editing.
 
-PROMPT FIX:
+## PROMPT FIX:
 There is a 0 that appears in the text space for the quantity if you delete everything, This 0 cannot be deleted which leads the user to type 010 for a quantiy of 10 items. I want to get rid of that and leave it blank as you are typing in a new number. It should default to 0 if you it is empty. Also if you click out of the text space it should appear as 0 automatically.
 
-AI RESPONSE FIX:
+## AI RESPONSE FIX:
 I’ll adjust the quantity input to use a temporary text state so it can be blank while typing, then commit to 0 on blur (or when left empty).
 
 Edited

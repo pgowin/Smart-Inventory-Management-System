@@ -1,7 +1,7 @@
-Prompt 4:
+## Prompt 4:
 Let's start with the inventory items CRUD. There should be mock data for 5 inventory items. I should be able to add inventory items with a simple “add item button” that prompts what I want to add and all the necessary information I have to put for the item. I should be able to delete an item with a simple delete button. I should also be able to edit the items that I have added. There should be simple UI components that show add items, and delete and edit on the items that have been already added.
 
-AI Response:
+## AI Response:
 I’m moving into implementation now: I’ll wire the inventory-items feature end to end (mock data, state hook, and UI with add/edit/delete actions) and connect it to the app shell.
 
 Reviewed 5 files
