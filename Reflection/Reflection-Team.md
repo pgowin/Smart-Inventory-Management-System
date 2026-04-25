@@ -24,3 +24,17 @@ Next time, I would improve by making the specs more measurable up front, especia
 
 ## Nathan
 
+### How I wrote prompts
+
+I wrote prompts by gathering all the context I needed for to be able to make the propmpts as effective as possible for what task I am trying to accomplish at that givin time. Once done with this step, I move on to make a step by step prompt on how it should approach and accomplish the goal I want to make. This gives AI better clarity on how it should approach the result and get the best and most accurate possible results. I tried to be as detailed as possible so the AI bot has a less chance of messing up and giving incorrect solutions.
+
+### How I validated AI output
+
+
+
+### What I learned about spec-driven development
+
+
+## What they would change next 
+
+
